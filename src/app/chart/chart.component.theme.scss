@@ -1,0 +1,30 @@
+@import '~@angular/material/theming';
+
+@mixin chart-component-theme($theme) {
+
+  $primary: map-get($theme, primary);
+  $background: map-get($theme, background);
+  $is-dark-theme: map-get($theme, is-dark);
+
+  .chart {
+
+    .title {
+      background: mat-color($primary);
+      color: mat-color($primary, default-contrast);
+    }
+
+    .body {
+      background-color: mat-color($background, card);
+    }
+
+    .last-update {
+      @if $is-dark-theme {
+        background: #2b2b2b;
+        color: #fff;
+      } @else {
+        background: lightgray;
+        color: #626262;
+      }
+    }
+  }
+}

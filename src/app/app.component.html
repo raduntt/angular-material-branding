@@ -1,0 +1,62 @@
+<mat-toolbar>
+  <mat-toolbar-row>
+    <button
+      mat-button>
+      Link 1
+    </button>
+
+    <button
+      mat-button>
+      Link 2
+    </button>
+
+    <button
+      mat-button>
+      Link 3
+    </button>
+
+    <app-theme-picker></app-theme-picker>
+
+    <mat-form-field class="font">
+      <mat-select [formControl]="font">
+        <mat-option [value]="'Montserrat'">
+          Montserrat
+        </mat-option>
+        <mat-option [value]="'DancingScript'">
+          DancingScript
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+
+<mat-sidenav-container >
+  <mat-sidenav mode="side" opened>
+    <mat-nav-list>
+      <mat-list-item *ngFor="let link of links">
+         <a matLine>{{ link }}</a>
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <mat-tab-group>
+      <mat-tab label="Theme Changer">
+        <app-theme-changer></app-theme-changer>
+      </mat-tab>
+      <mat-tab label="Cards">
+        <app-cards></app-cards>
+      </mat-tab>
+      <mat-tab label="Text">
+        <app-text></app-text>
+      </mat-tab>
+      <mat-tab label="Chart">
+        <app-chart></app-chart>
+      </mat-tab>
+      <mat-tab label="Custom Component">
+        <app-custom></app-custom>
+      </mat-tab>
+    </mat-tab-group>
+  </mat-sidenav-content>
+</mat-sidenav-container>

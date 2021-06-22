@@ -1,0 +1,18 @@
+@import '~@angular/material/theming';
+@import './default-color-values.scss';
+@import './color-palettes.scss';
+@import '../typography-config.scss';
+@import '../custom-components-theme.scss';
+
+@include mat-core($custom-typography);
+
+$light-theme: mat-light-theme((
+  color: (
+    primary: $theme-primary-palette,
+    accent: $theme-accent-palette,
+    warn: $theme-warn-palette,
+  )
+));
+
+@include angular-material-theme($light-theme);
+@include custom-components-theme($light-theme);

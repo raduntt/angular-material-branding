@@ -1,0 +1,30 @@
+@import '~@angular/material/theming';
+
+@mixin custom-component-theme($theme) {
+
+  $primary: map-get($theme, primary);
+  $background: map-get($theme, background);
+  $is-dark-theme: map-get($theme, is-dark);
+
+  .custom-component {
+
+    .header {
+      background: mat-color($primary);
+      color: mat-color($primary, default-contrast);
+    }
+
+    .body {
+      background-color: mat-color($background, card);
+    }
+
+    .action-buttons {
+      @if $is-dark-theme {
+        background: #2b2b2b;
+        color: #fff;
+      } @else {
+        background: lightgray;
+        color: #626262;
+      }
+    }
+  }
+}
