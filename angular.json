@@ -35,7 +35,7 @@
               {
                 "inject": false,
                 "input": "src/themes/dark-theme/dark-theme.scss",
-                "bundleName": "assets/dark-theme"
+                "bundleName": "dark-theme"
               }
             ],
             "scripts": [],

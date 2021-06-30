@@ -54,7 +54,7 @@ export class ThemePickerComponent implements OnInit  {
     if (theme.isDefault) {
       this.styleManagerService.removeStyle('theme');
     } else {
-      this.styleManagerService.setStyle('theme', `assets/${theme.name}.css`);
+      this.styleManagerService.setStyle('theme', `${theme.name}.css`);
     }
 
     this.themeStorageService.storeTheme(this.currentTheme);
