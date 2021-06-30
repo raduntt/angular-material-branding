@@ -1,12 +1,12 @@
-@import '~@angular/material/theming';
+@use '~@angular/material' as mat;
 @import './default-color-values.scss';
 @import './color-palettes.scss';
 @import '../typography-config.scss';
 @import '../custom-components-theme.scss';
 
-@include mat-core($custom-typography);
+@include mat.core($custom-typography);
 
-$light-theme: mat-light-theme((
+$light-theme: mat.define-light-theme((
   color: (
     primary: $theme-primary-palette,
     accent: $theme-accent-palette,
@@ -14,5 +14,5 @@ $light-theme: mat-light-theme((
   )
 ));
 
-@include angular-material-theme($light-theme);
+@include mat.all-component-themes($light-theme);
 @include custom-components-theme($light-theme);
