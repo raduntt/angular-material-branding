@@ -1,3 +1,4 @@
+@use '~@angular/material' as mat;
 $theme-primary-color-map: (
   50: var(--dark-theme-primary-color-50),
   100: var(--dark-theme-primary-color-100),
@@ -97,6 +98,6 @@ $theme-warn-color-map: (
   ),
 );
 
-$theme-primary-palette: mat-palette($theme-primary-color-map);
-$theme-accent-palette: mat-palette($theme-accent-color-map);
-$theme-warn-palette: mat-palette($theme-warn-color-map);
+$theme-primary-palette: mat.define-palette($theme-primary-color-map);
+$theme-accent-palette: mat.define-palette($theme-accent-color-map);
+$theme-warn-palette: mat.define-palette($theme-warn-color-map);

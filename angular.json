@@ -25,7 +25,6 @@
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
-            "aot": true,
             "assets": [
               "src/favicon.ico",
               "src/assets"
@@ -36,10 +35,16 @@
               {
                 "inject": false,
                 "input": "src/themes/dark-theme/dark-theme.scss",
-                "bundleName": "assets/dark-theme"
+                "bundleName": "dark-theme"
               }
             ],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -68,19 +73,24 @@
                   "maximumError": "4kb"
                 }
               ]
-            }
-          }
+            },
+            "development": {}
+          },
+          "defaultConfiguration": "production"
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "material-tutorial:build"
           },
           "configurations": {
             "production": {
               "browserTarget": "material-tutorial:build:production"
+            },
+            "development": {
+              "browserTarget": "material-tutorial:build:development"
             }
-          }
+          },
+          "defaultConfiguration": "development"
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
@@ -122,14 +132,17 @@
         "e2e": {
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
-            "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "material-tutorial:serve"
+            "protractorConfig": "e2e/protractor.conf.js"
           },
           "configurations": {
             "production": {
               "devServerTarget": "material-tutorial:serve:production"
+            },
+            "development": {
+              "devServerTarget": "material-tutorial:serve:development"
             }
-          }
+          },
+          "defaultConfiguration": "development"
         }
       }
     }
